@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import styles from './SpreadTheWord.css';
-import {track} from '../../analytics';
 
 class SpreadTheWord extends React.Component {
   constructor(props) {
@@ -89,7 +88,6 @@ class SpreadTheWord extends React.Component {
       <span
         className={classNames(styles.handCursor)}
         onClick={() => {
-          track('FB_SHARE_CLICKED');
           window.open(
             'https://www.facebook.com/sharer/sharer.php?u=' +
               this._getShareUrl('facebook') +
@@ -127,7 +125,6 @@ class SpreadTheWord extends React.Component {
       <span
         className={classNames(styles.handCursor)}
         onClick={() => {
-          track('LINKEDIN_SHARE_CLICKED');
           window.open(
             'https://www.linkedin.com/shareArticle?mini=true&url=' +
               this._getShareUrl('linkedin') +
@@ -165,7 +162,6 @@ class SpreadTheWord extends React.Component {
       <span
         className={classNames(styles.handCursor)}
         onClick={() => {
-          track('GPLUS_SHARE_CLICKED');
           window.open(
             'https://plus.google.com/share?url=' +
               this._getShareUrl('googleplus'),
